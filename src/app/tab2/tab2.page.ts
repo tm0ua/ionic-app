@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-  currentImage: any;
 
   constructor(public photoService: PhotoService) {}
 

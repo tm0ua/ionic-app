@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Three
+      Scan Code
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <p *ngIf="myObservable$ | async; let device"> {{ device.name }}</p>
+  <p *ngFor="let number of myNumbersObservable$ | async">{{ number.name }} {{ number.address }}</p>
+  <!-- <ion-item>${scanService.qrCode}</ion-item> -->
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+      <ion-fab-button (click)="scanService.scanBarcode()">
+        <ion-icon name="qr-scanner"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+</ion-content>
